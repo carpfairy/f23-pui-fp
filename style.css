@@ -145,7 +145,6 @@ textarea{
 .results-clothtype-inter{
     font-family: "Inter";
     font-size: 26px;
-    font-weight:bold;
 
 }
 
@@ -158,8 +157,27 @@ textarea{
 
 .results-table-small{
     flex-grow:1;
+    border:solid 3px yellow;
 }
 
 .results-table-large{
     flex-grow:2;
+    border:solid 2px red;
+}
+
+.results-material-title{
+    font-size:26px;
+    border:solid 2px blue;
+}
+
+.results-material-desc{
+    font-family: "Consolas";
+    font-size:18px;
+    border:solid 2px purple;
+}
+
+.results-row{
+    display:flex;
+    flex-grow:1;
+    border:solid 2px aqua;
 }
