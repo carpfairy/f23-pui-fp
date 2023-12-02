@@ -1,0 +1,165 @@
+@font-face {
+    font-family: 'Consolas';
+    src: url('fonts/subset-Consolas.woff2') format('woff2'),
+        url('fonts/subset-Consolas.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face{
+    font-family: 'Inter';
+    src: url('Inter-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-image: url(images/canvas-texture.jpg);
+    background-size: 100%;
+}
+
+.flex-container{
+    display: flex;
+    border:solid pink 2px;
+}
+
+.flex-box{
+    border:solid 2px blue;
+    flex: 100%;
+}
+
+.container{
+    border:solid 2px black;
+    font-family: "Consolas";
+}
+
+.heading{
+    /* border: solid 2px red; */
+    margin-left:20px;
+}
+
+.heading img{
+    height: 100px;
+}
+.heading-container{
+    border:solid 2px blue;
+}
+
+.gif {
+    margin:35px;
+    height:500px;
+    width:500px;
+    border-radius:10%;
+    background-image: url("images/ClothMaterial_Layer1.jpg");
+    background-size:100%;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    animation: play 4s infinite steps(1);
+    animation-play-state:paused;
+}
+.gif:hover {
+    animation-play-state:running;
+}
+
+@keyframes play {
+    0%   { background-image: url('images/ClothMaterial_Layer1.jpg');} 
+    7.7%  { background-image: url('images/ClothMaterial_Layer2.jpg'); }
+    15.4%  { background-image: url('images/ClothMaterial_Layer3.jpg'); }
+    23.1%  { background-image: url('images/ClothMaterial_Layer4.jpg'); }
+    30.8%  { background-image: url('images/ClothMaterial_Layer5.jpg'); }
+    38.5%  { background-image: url('images/ClothMaterial_Layer6.jpg'); }
+    46.2%  { background-image: url('images/ClothMaterial_Layer7.jpg'); }
+    53.9% { background-image: url('images/ClothMaterial_Layer8.jpg'); }
+    61.6% { background-image: url('images/ClothMaterial_Layer9.jpg'); }
+    69.3% { background-image: url('images/ClothMaterial_Layer10.jpg'); }
+    77% { background-image: url('images/ClothMaterial_Layer11.jpg'); }
+    84.7% { background-image: url('images/ClothMaterial_Layer12.jpg'); }
+    92.4% { background-image: url('images/ClothMaterial_Layer13.jpg'); }
+}
+
+.main-desc{
+    margin-right:50px;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+select{
+    font-family: "Consolas";
+    font-size:16px;
+    
+}
+
+.text-input{
+    width:200px;
+    height:200px;
+    font-size:16px;
+}
+
+textarea{
+    width:100%;
+}
+.tag{
+    flex:100%;
+    border:solid 2px red;
+    display:inline;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.tag img{
+    height:100px;
+}
+
+.main-tag-desc{
+    display:flex;
+    font-size:12px;
+    color:rgb(100, 100, 100);
+    margin-right:10px;
+    /* background: -webkit-linear-gradient(#3FAEFF, #3E45FF, #969AFF,#DA8AFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+.submit-button{
+    border:solid 2px green;
+    float:right;
+}
+
+.submit-button button{
+    font-family:"Consolas";
+    font-size:16px;
+}
+
+.results-container{
+    font-family: "Inter";
+    margin: 20px;
+}
+
+.results-flex-container{
+    display:flex;
+    margin:20px;
+}
+
+.results-clothtype-inter{
+    font-family: "Inter";
+    font-size: 26px;
+    font-weight:bold;
+
+}
+
+.results-clothtype-cons{
+    margin-left: 2%;
+    flex-grow:1;
+    font-size:26px;
+    font-family: "Consolas";
+}
+
+.results-table-small{
+    flex-grow:1;
+}
+
+.results-table-large{
+    flex-grow:2;
+}
