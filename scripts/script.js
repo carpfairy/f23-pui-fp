@@ -5,104 +5,104 @@ const form = document.querySelector('form');
 
 
 const materialTypes = {
-    "Acrylic":{
-        "Type": "Synthetic",
+    "acrylic":{
+        "Type":"Synthetic",
         "Environmental Impact":"C",
-        "Care": "Medium"
+        "Care":"Medium"
     },
 
-    "Cashmere":{
-        "Type": "Natural",
+    "cashmere":{
+        "Type":"Natural",
         "Environmental Impact":"B-",
-        "Care": "Hard"
+        "Care":"Hard"
     },
 
-    "Cotton":{
-        "Type": "Natural",
-        "Environmental Impact":"B",
+    "cotton":{
+        "Type":"Natural",
+        "Environmental Impact":"C",
+        "Care":"Medium"
+    },
+
+    "down":{
+        "Type":"Natural",
+        "Environmental Impact":"A-",
+        "Care":"Hard"
+    },
+
+    "elastane":{
+        "Type":"Synthetic",
+        "Environmental Impact":"D",
+        "Care":"Easy"
+    },
+
+    "genuine leather":{
+        "Type":"Natural",
+        "Environmental Impact":"C",
+        "Care":"Medium"
+    },
+
+    "linen":{
+        "Type":"Natural",
+        "Enviromental Impact":"A",
         "Care": "Easy"
     },
 
-    "Down":{
-        "Type": "Natural",
-        "Environmental Impact": "A-",
-        "Care": "Hard"
+    "nylon":{
+        "Type":"Synthetic",
+        "Environmental Impact":"C",
+        "Care":"Easy"
     },
 
-    "Elastane":{
-        "Type": "Synthetic",
-        "Environmental Impact": "D",
+    "polyester":{
+        "Type":"Synthetic",
+        "Environmental Impact":"F",
         "Care": "Easy"
     },
 
-    "Genuine Leather":{
-        "Type": "Natural",
-        "Environmental Impact": "C",
+    "polyurethane":{
+        "Type":"Synthetic",
+        "Environmental Impact":"D",
+        "Care": "Hard"
+    },
+
+    "rayon":{
+        "Type":"Semi-Synthetic",
+        "Environmental Impact":"B-",
         "Care": "Medium"
     },
 
-    "Linen":{
-        "Type": "Natural",
-        "Environmental Impact": "A",
-        "Care": "Easy"
-    },
-
-    "Nylon":{
-        "Type": "Synthetic",
-        "Environmental Impact": "C",
-        "Care": "Easy"
-    },
-
-    "Polyester":{
-        "Type": "Synthetic",
-        "Environmental Impact": "F",
-        "Care": "Easy"
-    },
-
-    "Polyurethane":{
-        "Type": "Synthetic",
-        "Environmental Impact": "D",
+    "silk":{
+        "Type":"Natural",
+        "Environmental Impact":"A-",
         "Care": "Hard"
     },
 
-    "Rayon":{
-        "Type": "Semi-Synthetic",
-        "Environmental Impact": "B-",
-        "Care": "Medium"
+    "spandex":{
+        "Type":"Synthetic",
+        "Environmental Impact":"C",
+        "Care":"Easy"
     },
 
-    "Silk":{
+    "viscose":{
+        "Type":"Semi-Synthetic",
+        "Environmental Impact":"B-",
+        "Care":"Medium"
+    },
+
+    "wool":{
         "Type": "Natural",
-        "Environmental Impact": "A-",
-        "Care": "Hard"
-    },
-
-    "Spandex":{
-        "Type": "Synthetic",
-        "Environmental Impact": "C",
-        "Care": "Easy"
-    },
-
-    "Viscose":{
-        "Type": "Semi-Synthetic",
-        "Environmental Impact": "B-",
-        "Care": "Medium"
-    },
-
-    "Wool":{
-        "Type": "Natural",
-        "Environmental Impact": "A-",
-        "Care": "Easy"
+        "Environmental Impact":"A-",
+        "Care":"Easy"
     },
     
 }
-
-let fabricsList = Object.keys(materialTypes);
 let materialObjects = [];
+let notFound=[];
 
 class Fabric {
-    constructor(name, type, enviro, care){
+    constructor(name, percent, type, enviro, care){
         this.name = name;
+        this.percent = percent;
         this.type = type;
         this.enviro = enviro;
         this.care = care;
@@ -128,14 +128,14 @@ function getTextArea(){
 
 }
 
-function empty() {
-    var x;
-    x = document.getElementById("textarea").value;
-    if (x == "") {
-        alert("Enter material type");
-        return false;
-    };
-}
+// function checkEmpty() {
+//     var x;
+//     x = document.getElementById("textarea").value;
+//     if (x == "") {
+//         alert("Enter material type");
+//         return false;
+//     };
+// }
 
 
 if(window.location.href.indexOf("main") > -1){
@@ -143,92 +143,144 @@ if(window.location.href.indexOf("main") > -1){
 
     form.addEventListener('submit', (e) => {
         e.preventDefault(); 
-        empty()
+        // checkEmpty()
+        
         const fd = new FormData(form);
         const obj = Object.fromEntries(fd);
-    
-        //   for(item of fd){
-        //     console.log(item);
-        //   }
     
         const json = JSON.stringify(obj);
         localStorage.setItem('form', json);
     
-        //   if(localStorage.getItem('textarea') != null){
-        //     window.location.href="results.html";
-        //   }
-    
         let formStorage = localStorage.getItem('form');
         console.log(Object.keys(formStorage).length);
     
-      console.log(localStorage);
-      console.log(localStorage.getItem('form'));
+        console.log(localStorage);
+        console.log(localStorage.getItem('form'));
+    
+        window.location.href = "results.html";
+        
     });
+
+   
 }
 
-let formresults;
-let results;
-let fabricInput = [];
-let divIdCounter = 1;
 
 if(window.location.href.indexOf("results") > -1){
-    //Create condition for empty input
-    
+    let formresults;
+    let results;
+    console.log(localStorage.getItem('form'));
+
     //Non-empty input
     formresults = JSON.parse(localStorage.getItem('form'));
     results = Object.values(formresults);
-    console.log(results);
-
-    let clothtype = results[0];
-    let textarea = results[1].split(',');
-
-    let clothtypefile1 = "<object data=fabric-data/clothtype-"
-    let clothtypefile2 = ".txt width=100%></object>"
-    let clothtypedesc = clothtypefile1 + clothtype + clothtypefile2;
-
-    document.getElementById("clothtype").innerHTML = clothtype + clothtypedesc;
-    materialChecker(textarea)
     
+    let clothtype = results[0];
+    let textarea = results[1];
+
+    //Clothing type
+    let blendingfor = document.getElementById("clothtype")
+    blendingfor.innerHTML = clothtype;
+
+   
+    
+    // textarea.map(function(value){return value.replace(/\D+/g, '');})
+    
+
+    //Split string by comma
+    if(results[1].indexOf(',') > -1){ 
+        //Take out all spaces
+        textarea = textarea.replace(/ /g, ""); 
+         //Make lower case, turn into array of strings             
+        textarea = textarea.toLowerCase().split(',');      
+    }
+
+    else{
+        textarea = results[1].toLowerCase();
+        textarea = textarea.replace(/ /g, "");
+        textarea = textarea.split();
+    }
+  
+    //Get numerical value
+    let percentages=[];
+    for(i in textarea){
+        percentages.push(textarea[i]);
+    }
+
+    for(i in percentages){
+        percentages[i] = percentages[i].replace(/\D/g, "");
+    }
+     console.log(percentages);
+
+    materialChecker(textarea, percentages)
 }
 
-//Check if the materials in textarea match with materials in array
-function materialChecker(textarea){
 
+//Check if the materials in textarea match with materials in array
+function materialChecker(textarea, percentages){
+    
+
+    let fabricsLowercase=Object.keys(materialTypes);
+    let fabricInput = [];
+    
     //If the textarea input is in list of fabric names, put it in the array "fabricInput"
     for(let i=0; i<textarea.length; i++){
-        for(let j=0; j<fabricsList.length; j++){
-            if(textarea[i].includes(fabricsList[j])){
-                fabricInput.push(fabricsList[j]);
+        for(j=0; j<fabricsLowercase.length; j++){
+            if(textarea[i].includes(fabricsLowercase[j])){
+                fabricInput.push(fabricsLowercase[j]);
             }
         }
     }
+    console.log(fabricInput);
+    
+    //If there are no matches between textarea and the list of fabric names, display an error page
+    if(fabricInput.length == 0){
+        let blendingfor = document.getElementById("blending-for");
+        blendingfor.innerHTML = "oops.. we couldn't find that fabric.";
+        let clothtype = document.getElementById("clothtype");
+        clothtype.remove();
 
+        thisDiv = document.querySelector('.results-clothtype-inter');
+        let newDiv = document.createElement("p");
+        newDiv.innerHTML = "Go back and check your spelling!"
+        
+        thisDiv.appendChild(newDiv);
+
+    }
     //Take the fabrics from "fabricInput", look for their corresponding details, and make a new object with them
     for(let i=0; i<fabricInput.length; i++){
-        let fabricType, fabricEnviro, fabricCare;
+        let fabricName, fabricPerc, fabricType, fabricEnviro, fabricCare;
+        
+        for(let type in materialTypes){
+            if(fabricInput[i] == type){
+                fabricName = fabricInput[i];
+                for(let details in materialTypes[type]){    
 
-        for(let fabricName in materialTypes){
-            if(fabricInput[i].includes(fabricName)){
-
-                for(let details in materialTypes[fabricName]){
-                    
                     if(details.includes("Type")){
-                        fabricType = materialTypes[fabricName][details];
+                        fabricType = materialTypes[type][details];
                     }
                     if(details.includes("Environmental Impact")){
-                        fabricEnviro = materialTypes[fabricName][details];
+                        fabricEnviro = materialTypes[type][details];
                     }
                     if(details.includes("Care")){
-                        fabricCare = materialTypes[fabricName][details];
+                        fabricCare = materialTypes[type][details];
                     }
                 }
-
-                let newFabric = new Fabric(fabricName, fabricType, fabricEnviro, fabricCare);
-                materialObjects.push(newFabric);
             }
         }
+        fabricPerc = parseInt(percentages[i]);
+
+        let newFabric = new Fabric(fabricName, fabricPerc, fabricType, fabricEnviro, fabricCare);
+        
+        let duplicate = materialObjects.findIndex(e => e.name === newFabric.name);
+        if (duplicate > -1) {
+            materialObjects[duplicate].percent += newFabric.percent;
+            console.log(materialObjects[duplicate]);
+        }   
+
+        else{materialObjects.push(newFabric);}
     }
 
+    console.log(materialObjects);
 }
 
 //Create container row for result
@@ -245,6 +297,7 @@ function createRowDiv(){
 }
 
 //Create two columns inside container row for result
+
 function createColDiv(counter){
     let container=document.querySelectorAll(".results-row")[counter];
     
@@ -255,7 +308,6 @@ function createColDiv(counter){
     let largeCol=document.createElement("div");
     largeCol.classList.add('results-table-large');
     container.appendChild(largeCol);
-    divIdCounter+= 1;
 }
 
 //Create divs inside description div (right column) for result
@@ -265,7 +317,10 @@ function createColDivDesc(counter, fab){
     let name=document.createElement("div");
     name.classList.add('results-material-head');
     thisDiv.appendChild(name);
-    name.innerHTML="<b>" + fab.name + "</b>"
+    if(fab.percent){
+        name.innerHTML="<b>" + fab.name.charAt(0).toUpperCase() + fab.name.slice(1) + " " + fab.percent + "%</b>";
+    }
+    else{name.innerHTML="<b>" + fab.name.charAt(0).toUpperCase() + fab.name.slice(1) + "</b>";}
     
     let type=document.createElement("div");
     type.classList.add('results-material-subhead');
@@ -309,6 +364,7 @@ function createColDivPic(counter, fab){
 
 
 let counter=0;
+
 for(i=0; i<materialObjects.length; i++){
     createRowDiv()
     createColDiv(counter)

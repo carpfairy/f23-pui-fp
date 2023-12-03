@@ -15,6 +15,14 @@
     font-display: swap;
 }
 
+p {
+    font-family:"Consolas";
+    font-size:16px;
+}
+html,body{
+    margin:0;
+    padding:0;
+}
 body {
     background-image: url(images/canvas-texture.jpg);
     background-size: 100%;
@@ -22,38 +30,62 @@ body {
 
 .flex-container{
     display: flex;
-    border:solid pink 2px;
+    font-family:"Consolas";
+    /* border:solid pink 2px; */
 }
 
-.flex-box{
-    border:solid 2px blue;
-    flex: 100%;
+.flex-container-col{
+    display:flex;
+    font-family:"Consolas";
+    flex-direction:column;
 }
+
+.main-flex-container-col{
+    display:flex;
+    font-family:"Consolas";
+    flex-direction:column;
+    margin-top:auto;
+    margin-bottom:auto;
+}
+
+
+.flex-box{   
+    flex:1;
+}
+.main-flex-container{
+    display:flex;
+    height:100vh;
+}
+
 
 .container{
-    border:solid 2px black;
     font-family: "Consolas";
+    /* border:solid 2px black; */
 }
-
 .heading{
-    /* border: solid 2px red; */
-    margin-left:20px;
+    margin-left:30px;
 }
-
 .heading img{
     height: 100px;
 }
+
 .heading-container{
     border:solid 2px blue;
 }
 
+.gif-flex-box{
+    display:absolute;
+    top:0;
+    left:0;
+}
+
 .gif {
-    margin:35px;
-    height:500px;
+    justify-content:center;
+    align-items:center;
+    height:100%;
     width:500px;
-    border-radius:10%;
     background-image: url("images/ClothMaterial_Layer1.jpg");
-    background-size:100%;
+    background-size:cover;
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     animation: play 4s infinite steps(1);
@@ -81,7 +113,7 @@ body {
 
 .main-desc{
     margin-right:50px;
-    margin-top:50px;
+    margin-left:50px;
     margin-bottom:50px;
 }
 
@@ -97,12 +129,9 @@ select{
     font-size:16px;
 }
 
-textarea{
-    width:100%;
-}
+
 .tag{
     flex:100%;
-    border:solid 2px red;
     display:inline;
     margin-left:auto;
     margin-right:auto;
@@ -112,29 +141,35 @@ textarea{
     height:100px;
 }
 
+.main-clothtype{
+    margin-left: 20px;
+}
+
 .main-tag-desc{
     display:flex;
     font-size:12px;
     color:rgb(100, 100, 100);
     margin-right:10px;
+    flex-direction:column;
     /* background: -webkit-linear-gradient(#3FAEFF, #3E45FF, #969AFF,#DA8AFF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
 }
 
+.main-tag-instructions{
+    font-size:14px;
+    font-weight:bold;
+    color:black;
+}
 .submit-button{
-    border:solid 2px green;
-    float:right;
+    width:100%;
+    height:100%;
+    /* border:solid 2px green; */
 }
 
-.submit-button button{
-    font-family:"Consolas";
-    font-size:16px;
-}
 
 .results-container{
     font-family: "Inter";
-    margin: 50px;
 }
 
 .results-flex-container{
@@ -157,27 +192,35 @@ textarea{
 }
 
 .results-table-small{
-    flex:1;
-    justify-content: center;
-    align-items: center;
+    flex-grow:1;
+    min-height:100%;
+    align-items:center;
+    justify-content:center;
+    max-height:100%;
     /* border:solid 3px yellow; */
 }
 
 .results-table-small img{
     width:100%;
+    
+    object-fit:cover;
+
+    
 }
 
 .results-table-large{
-    flex:2;
+    margin-right:20px;
+    width:60%;
+    flex-grow:2;
     /* border:solid 2px red; */
 }
 
 .results-material-head{
     margin-top:15px;
     margin-left:5%;
-    margin-bottom:5px;
+    margin-bottom:12px;
     font-family: "Inter";
-    font-size:26px;
+    font-size:30px;
 }
 .results-material-subhead{
     margin-left:5%;
@@ -196,10 +239,21 @@ textarea{
 
 .results-row{
     display:flex;
-    flex-grow:1;
-    margin-bottom:50px;
-    align-items: center;
-    /* justify-content: center; */
+    align-items:start;
     /* border:solid 2px aqua; */
 }
 
+textarea{
+    width:99%;
+    resize:none;
+}
+
+input[type=submit]{
+    font-family: "Inter";
+    font-weight:bold;
+    color:white;
+    width:100%;
+    height:40px;
+    background-color:black;
+   
+}
