@@ -134,7 +134,7 @@ textarea{
 
 .results-container{
     font-family: "Inter";
-    margin: 20px;
+    margin: 50px;
 }
 
 .results-flex-container{
@@ -143,6 +143,7 @@ textarea{
 }
 
 .results-clothtype-inter{
+    margin-left:25px;
     font-family: "Inter";
     font-size: 26px;
 
@@ -156,28 +157,49 @@ textarea{
 }
 
 .results-table-small{
-    flex-grow:1;
-    border:solid 3px yellow;
+    flex:1;
+    justify-content: center;
+    align-items: center;
+    /* border:solid 3px yellow; */
+}
+
+.results-table-small img{
+    width:100%;
 }
 
 .results-table-large{
-    flex-grow:2;
-    border:solid 2px red;
+    flex:2;
+    /* border:solid 2px red; */
 }
 
-.results-material-title{
+.results-material-head{
+    margin-top:15px;
+    margin-left:5%;
+    margin-bottom:5px;
+    font-family: "Inter";
     font-size:26px;
-    border:solid 2px blue;
+}
+.results-material-subhead{
+    margin-left:5%;
+    margin-bottom:5px;
+    font-size:20px;
+    /* border:solid 2px blue; */
 }
 
 .results-material-desc{
+    margin-left:8%;
+    margin-bottom:20px;
     font-family: "Consolas";
-    font-size:18px;
-    border:solid 2px purple;
+    font-size:15px;
+    /* border:solid 2px purple; */
 }
 
 .results-row{
     display:flex;
     flex-grow:1;
-    border:solid 2px aqua;
+    margin-bottom:50px;
+    align-items: center;
+    /* justify-content: center; */
+    /* border:solid 2px aqua; */
 }
+
