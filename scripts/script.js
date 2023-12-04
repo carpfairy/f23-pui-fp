@@ -1,4 +1,4 @@
-let clothingTypeList = ["Shirt", "Blouse", "Pants", "Blazer", "Jeans", "Cardigan/Sweater", "Jacket/Coat", "Skirt", "Sweatshirt", "Undergarments", "Lingerie"]
+let clothingTypeList = ["Shirt", "Blouse", "Pants", "Blazer", "Jeans", "Cardigan/Sweater", "Jacket/Coat", "Skirt", "Sweatshirt", "Exercise Clothing", "Undergarments", "Lingerie"]
 // let materialTypeList = ["Acrylic", "Cashmere", "Cotton", "Down", "Elastene", "Genuine Leather", "Linen", "Nylon", "Polyester", "Polyurethane", "Care", "Rayon", "Silk", "Spandex", "Viscose", "Wool"]
 
 const form = document.querySelector('form');
@@ -98,6 +98,7 @@ const materialTypes = {
 }
 let materialObjects = [];
 let notFound=[];
+let percentages=[];
 
 class Fabric {
     constructor(name, percent, type, enviro, care){
@@ -112,13 +113,16 @@ class Fabric {
 
 function clothingTypeDropDown(){
     let cLength = clothingTypeList.length;
-    let dropdown = document.querySelector('#clothingDropDown')
+    let dropdown = document.querySelector('#clothingDropDown');
+
+        
     for(let i=0; i<cLength; i++){
         let name = clothingTypeList[i];
         let option = document.createElement("option");
         option.textContent = name;
         dropdown.appendChild(option);
     }
+
 }
 
 function getTextArea(){
@@ -143,7 +147,6 @@ if(window.location.href.indexOf("main") > -1){
 
     form.addEventListener('submit', (e) => {
         e.preventDefault(); 
-        // checkEmpty()
         
         const fd = new FormData(form);
         const obj = Object.fromEntries(fd);
@@ -177,14 +180,28 @@ if(window.location.href.indexOf("results") > -1){
     let clothtype = results[0];
     let textarea = results[1];
 
-    //Clothing type
-    let blendingfor = document.getElementById("clothtype")
-    blendingfor.innerHTML = clothtype;
+    
+    //Add description for what clothing type was selected
+    if(!(clothtype == "select")){
+        let clothtypeDiv = document.getElementById("clothtype")
+        clothtypeDiv.innerHTML = clothtype;
 
-   
-    
-    // textarea.map(function(value){return value.replace(/\D+/g, '');})
-    
+        let clothtypeWrapper = document.getElementById("results-clothtype");
+        clothtype = clothtype.split("/");
+        clothtype = clothtype[0];
+        clothtype = clothtype.toString();
+
+        let clothtypeDesc= document.createElement("div");
+        clothtypeDesc.classList.add("results-clothtype-desc");
+        clothtypeWrapper.appendChild(clothtypeDesc);   
+        clothtypeDesc.innerHTML = $(clothtypeDesc).load("clothing-type/" + clothtype + ".txt");
+       
+    }
+
+    if(clothtype == "select"){
+        let blendingfor = document.getElementById("blending-for");
+        blendingfor.remove();
+    }
 
     //Split string by comma
     if(results[1].indexOf(',') > -1){ 
@@ -201,7 +218,7 @@ if(window.location.href.indexOf("results") > -1){
     }
   
     //Get numerical value
-    let percentages=[];
+    
     for(i in textarea){
         percentages.push(textarea[i]);
     }
@@ -209,7 +226,6 @@ if(window.location.href.indexOf("results") > -1){
     for(i in percentages){
         percentages[i] = percentages[i].replace(/\D/g, "");
     }
-     console.log(percentages);
 
     materialChecker(textarea, percentages)
 }
@@ -230,8 +246,7 @@ function materialChecker(textarea, percentages){
             }
         }
     }
-    console.log(fabricInput);
-    
+            
     //If there are no matches between textarea and the list of fabric names, display an error page
     if(fabricInput.length == 0){
         let blendingfor = document.getElementById("blending-for");
@@ -241,11 +256,12 @@ function materialChecker(textarea, percentages){
 
         thisDiv = document.querySelector('.results-clothtype-inter');
         let newDiv = document.createElement("p");
-        newDiv.innerHTML = "Go back and check your spelling!"
+        newDiv.innerHTML = "Go back and check your spelling!";
         
         thisDiv.appendChild(newDiv);
 
     }
+    
     //Take the fabrics from "fabricInput", look for their corresponding details, and make a new object with them
     for(let i=0; i<fabricInput.length; i++){
         let fabricName, fabricPerc, fabricType, fabricEnviro, fabricCare;
@@ -270,28 +286,30 @@ function materialChecker(textarea, percentages){
         fabricPerc = parseInt(percentages[i]);
 
         let newFabric = new Fabric(fabricName, fabricPerc, fabricType, fabricEnviro, fabricCare);
-        
+        if(newFabric.percent > 100){
+            newFabric.percent = 100;
+        }
+
         let duplicate = materialObjects.findIndex(e => e.name === newFabric.name);
         if (duplicate > -1) {
             materialObjects[duplicate].percent += newFabric.percent;
             console.log(materialObjects[duplicate]);
         }   
 
-        else{materialObjects.push(newFabric);}
+        else{
+            materialObjects.push(newFabric);
+        }
     }
-
-    console.log(materialObjects);
+    
 }
 
 //Create container row for result
 function createRowDiv(){
-    // let fabricString = fabricname.name.toString();
     let thisDiv=document.getElementById("table-container");
     let container=document.createElement("div");
     let linebreak=document.createElement("hr");
     thisDiv.appendChild(linebreak);
     container.classList.add("results-row");
-    // container.setAttribute("id", "'" + fabricString + "'");
     thisDiv.appendChild(container);
 
 }
@@ -362,13 +380,42 @@ function createColDivPic(counter, fab){
     thisDiv.appendChild(img);
 }
 
+//Add a note if percentages don't add to 100
+function percentageChecker(){
+    let percentCounter=0;
+    for(i in materialObjects){
+        percentCounter+= materialObjects[i].percent;
+    }
 
-let counter=0;
+    if((percentCounter != 100) && percentCounter != null){
+        createRowDiv();
 
-for(i=0; i<materialObjects.length; i++){
-    createRowDiv()
-    createColDiv(counter)
-    createColDivDesc(counter, materialObjects[i])
-    createColDivPic(counter, materialObjects[i])
-    counter+=1;
+        let wrapper=document.querySelectorAll(".results-row");
+        wrapper=wrapper[wrapper.length-1];
+
+        let errorDiv = document.createElement("div");
+        errorDiv.classList.add("results-percent-error");
+        wrapper.appendChild(errorDiv);
+
+        if(percentCounter < 100){
+            errorDiv.innerHTML = "Your blend doesn't add to 100%. Did we miss one? <br> Or did you?";
+        }
+        if(percentCounter > 100){
+            errorDiv.innerHTML = "Your blend is more than 100%... what could you possibly be wearing?";
+        }
+    }
+    
 }
+
+
+//Sorting by percentage
+materialObjects.sort(({percent:a}, {percent:b}) => b-a);
+
+for(i in materialObjects){
+    createRowDiv()
+    createColDiv(i)
+    createColDivDesc(i, materialObjects[i])
+    createColDivPic(i, materialObjects[i])
+}
+
+percentageChecker()  
