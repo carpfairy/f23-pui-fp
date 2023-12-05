@@ -1,1 +1,6 @@
-Cotton is a natural fiber, meaning it is biodegradable. Since it comes from the cotton plant, it is also renewable. However, the production process of conventional cotton is incredibly water intensive. Organic cotton, which is produced without the use of pesticides and toxic chemicals, is much less resource intensive. It is much more environmentally friendly than conventional cotton. Since organic cotton is produced without harmful checmicals, there is no residue left on the fabric, meaning it is a great option for those with sensitive skin or skin allergies. 
+<li> Biodegradable: Yes
+<li> Renewable: Yes
+<li> Made from: Cotton plant
+<br>
+<br>
+The production process of conventional cotton is incredibly water intensive. Opt for organic cotton, which is much less resource intensive. It is also produced without pesticides and chemicals, which makes it a great option for those with sensitive skin or allergies. 

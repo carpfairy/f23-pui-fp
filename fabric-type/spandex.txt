@@ -1,1 +1,10 @@
+<li> Breathability: C
+<li> Durability: B
+<li> Sweat-friendly: B
+<li> Comfort: A
+<li> Price: $$
+<li> What it's good for: Exercise clothing
+<br>
+<br>
+
 Spandex, also known as elastane or Lycra, is a synthetic fiber that adds stretch and recovery to fabrics. Spandex is a popular choice for activewear, shapewear, and form-fitting garments due to its elasticity and strength. However, it is not very breathable.

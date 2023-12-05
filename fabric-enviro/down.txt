@@ -1,3 +1,10 @@
-Down is a natural material made from the plumage of ducks or geese, meaning it is biodegradable. However, the lining or shell of what maintains the down material may be synthetic and nonbiodegradable. 
+<li> Biodegradable: Yes
+<li> Renewable: Yes
+<li> Made from: Duck and geese plumage
+<br>
+<br>
 
-According to the International Down and Feather Testing Laboratory, “Down and feathers have the lowest carbon footprint of any other fill material, both natural and synthetic.” While natural and biodegradable, the ethical concerns surrounding down production are significant. Traditional methods involve live-plucking or force-feeding geese and ducks, raising animal welfare issues. To address these concerns, the Responsible Down Standard (RDS) and the Global Traceable Down Standard (TDS) have been introduced, ensuring that down is sourced ethically and responsibly. These standards prohibit live-plucking and force-feeding, promoting humane treatment of animals in the down supply chain. Opting for products certified with these standards is crucial for consumers seeking sustainable and ethically sourced down products.
+While down is a natural material, down clothing often has a lining or shell that may be synthetic and nonbiodegradable. 
+<br>
+<div class="results-ethics">
+<b>Ethical Concerns:</b> Traditional down harvesting involves force feeding ducks and geese, before live plucking their plumage. These are unhealthy and painful processes. When shopping down, opt for clothing that is RDS (Responsible Down Standard) or TDS (Global Traceable Down Standard) certified. This ensures that the down was sourced from a farm that does not force feed or live pluck. </div>

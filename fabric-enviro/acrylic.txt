@@ -1,3 +1,6 @@
-Acrylic is a synthetic material, which means it is not biodegradable. Its production involves the use of fossil fuels, meaning it is nonrenewable. It relies specifically on propylene derived from natural gas, which means its production contributes to carbon emissions. Acrylic is a type of plastic, which means clothing made out of it sheds microplastics during washing. These can end up not only in the ocean, but also in your lungs. 
-
-Acrylic is among the top synthetic fibers responsible for microplastic pollution, emphasizing the urgent need for sustainable alternatives and improved waste management in the textile industry.
+<li> Biodegradable: No
+<li> Renewable: No
+<li> Made from: Petroleum, fossil fuels
+<br>
+<br>
+Acrylic production relies on propylene derived from natural gas, which contributes to carbon emissions. Acrylic is among the top synthetic fibers responsible for microplastic pollution.

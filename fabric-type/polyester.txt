@@ -1,1 +1,10 @@
-Polyester is the most popular fabric in the fashion industry. It is easy to care for, durable, and wrinkle-resistant. It is also inexpensive to purchase polyester clothing. However, it is not breathable, and promotes the production of odor causing bacteria. Avoid in exercise clothing.
+<li> Breathability: B
+<li> Durability: A
+<li> Sweat-friendly: C
+<li> Comfort: B
+<li> Price: $
+<li> What it's good for: Trends, fashionable clothing
+<br>
+<br>
+
+Polyester is the most popular fabric in the fashion industry because of its cheapness and versatility. It is easy to care for, durable, and wrinkle-resistant. It is also inexpensive to purchase polyester clothing. However, it is not breathable, and promotes the production of odor causing bacteria. Avoid in exercise clothing.

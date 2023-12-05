@@ -1,1 +1,7 @@
-Elastic is a synthetic fiber made from petrochemicals, making it non-biodegradable and environmentally taxing. Its production process involves energy-intensive procedures, contributing to carbon emissions. With limited recycling options, elastane poses challenges for a circular fashion economy. Manufacturers are exploring alternatives like plant-based elastane to mitigate these environmental impacts.
+<li> Biodegradable: No
+<li> Renewable: No
+<li> Made from: Fossil fuels
+<br>
+<br>
+
+Manufacturing elastane fibers from petroleum-based raw materials is energy-intensive, exacerbates the climate crisis, and causes environmental pollution. The microplastics released from washing elastane pose health risks to wildlife and humans.

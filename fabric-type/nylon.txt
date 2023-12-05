@@ -1,1 +1,10 @@
-Nylon is known for its durability and resistance to abrasion. It is commonly used in activewear for its excellent stretch and moisture-wicking abilities. It is also stain and static resistant. However, nylon lacks breathability, which may make it a poor choice for warmer climates.
+<li> Breathability: C
+<li> Durability: A
+<li> Sweat-friendly: B
+<li> Comfort: B
+<li> Price: $$
+<li> What it's good for: Exercise clothing
+<br>
+<br>
+
+Nylon is known for its durability and resistance to abrasion. It is commonly used in activewear for its excellent stretch and moisture-wicking abilities. It is also stain and static resistant. However, nylon lacks breathability, and retains odor.

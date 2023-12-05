@@ -1,1 +1,10 @@
-Elastane, commonly known as spandex or Lycra, is a synthetic fiber known for its exceptional stretchiness. It is sweat-resistant, crease-resistant, and durable. It is often used in exercise clothing.
+<li> Breathability: C
+<li> Durability: B
+<li> Sweat-friendly: B
+<li> Comfort: A
+<li> Price: $$
+<li> What it's good for: Exercise clothing
+<br>
+<br>
+
+Elastane, commonly known as spandex or Lycra, is a sweat-resistant, crease-resistant, and stretchy. While it doesn't absorb sweat, it wicks it away. This it won't show sweat stains, which makes it a good option for exercise clothing. 

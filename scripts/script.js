@@ -1,5 +1,4 @@
 let clothingTypeList = ["Shirt", "Blouse", "Pants", "Blazer", "Jeans", "Cardigan/Sweater", "Jacket/Coat", "Skirt", "Sweatshirt", "Exercise Clothing", "Undergarments", "Lingerie"]
-// let materialTypeList = ["Acrylic", "Cashmere", "Cotton", "Down", "Elastene", "Genuine Leather", "Linen", "Nylon", "Polyester", "Polyurethane", "Care", "Rayon", "Silk", "Spandex", "Viscose", "Wool"]
 
 const form = document.querySelector('form');
 
@@ -7,90 +6,105 @@ const form = document.querySelector('form');
 const materialTypes = {
     "acrylic":{
         "Type":"Synthetic",
+        "Grade": "C",
         "Environmental Impact":"C",
         "Care":"Medium"
     },
 
     "cashmere":{
         "Type":"Natural",
+        "Grade": "B",
         "Environmental Impact":"B-",
         "Care":"Hard"
     },
 
     "cotton":{
         "Type":"Natural",
-        "Environmental Impact":"C",
+        "Grade": "A",
+        "Environmental Impact":"B",
         "Care":"Medium"
     },
 
     "down":{
         "Type":"Natural",
+        "Grade": "A",
         "Environmental Impact":"A-",
         "Care":"Hard"
     },
 
     "elastane":{
         "Type":"Synthetic",
+        "Grade": "B",
         "Environmental Impact":"D",
         "Care":"Easy"
     },
 
     "genuine leather":{
         "Type":"Natural",
+        "Grade": "B",
         "Environmental Impact":"C",
         "Care":"Medium"
     },
 
     "linen":{
         "Type":"Natural",
+        "Grade": "A",
         "Enviromental Impact":"A",
         "Care": "Easy"
     },
 
     "nylon":{
         "Type":"Synthetic",
+        "Grade": "C",
         "Environmental Impact":"C",
         "Care":"Easy"
     },
 
     "polyester":{
         "Type":"Synthetic",
+        "Grade": "D",
         "Environmental Impact":"F",
         "Care": "Easy"
     },
 
     "polyurethane":{
         "Type":"Synthetic",
+        "Grade": "D",
         "Environmental Impact":"D",
         "Care": "Hard"
     },
 
     "rayon":{
         "Type":"Semi-Synthetic",
+        "Grade": "B",
         "Environmental Impact":"B-",
         "Care": "Medium"
     },
 
     "silk":{
         "Type":"Natural",
+        "Grade": "A",
         "Environmental Impact":"A-",
         "Care": "Hard"
     },
 
     "spandex":{
         "Type":"Synthetic",
+        "Grade": "C",
         "Environmental Impact":"C",
         "Care":"Easy"
     },
 
     "viscose":{
         "Type":"Semi-Synthetic",
+        "Grade": "B",
         "Environmental Impact":"B-",
         "Care":"Medium"
     },
 
     "wool":{
         "Type": "Natural",
+        "Grade": "A",
         "Environmental Impact":"A-",
         "Care":"Easy"
     },
@@ -101,8 +115,9 @@ let notFound=[];
 let percentages=[];
 
 class Fabric {
-    constructor(name, percent, type, enviro, care){
+    constructor(name, percent, grade, type, enviro, care){
         this.name = name;
+        this.grade = grade;
         this.percent = percent;
         this.type = type;
         this.enviro = enviro;
@@ -206,14 +221,14 @@ if(window.location.href.indexOf("results") > -1){
     //Split string by comma
     if(results[1].indexOf(',') > -1){ 
         //Take out all spaces
-        textarea = textarea.replace(/ /g, ""); 
+        textarea = textarea.trim();
          //Make lower case, turn into array of strings             
         textarea = textarea.toLowerCase().split(',');      
     }
 
     else{
         textarea = results[1].toLowerCase();
-        textarea = textarea.replace(/ /g, "");
+        textarea = textarea.trim();
         textarea = textarea.split();
     }
   
@@ -234,19 +249,18 @@ if(window.location.href.indexOf("results") > -1){
 //Check if the materials in textarea match with materials in array
 function materialChecker(textarea, percentages){
     
-
-    let fabricsLowercase=Object.keys(materialTypes);
+    let fabricsList=Object.keys(materialTypes);
     let fabricInput = [];
     
     //If the textarea input is in list of fabric names, put it in the array "fabricInput"
     for(let i=0; i<textarea.length; i++){
-        for(j=0; j<fabricsLowercase.length; j++){
-            if(textarea[i].includes(fabricsLowercase[j])){
-                fabricInput.push(fabricsLowercase[j]);
+        for(j=0; j<fabricsList.length; j++){
+            if(textarea[i].includes(fabricsList[j])){
+                fabricInput.push(fabricsList[j]);
             }
         }
     }
-            
+    
     //If there are no matches between textarea and the list of fabric names, display an error page
     if(fabricInput.length == 0){
         let blendingfor = document.getElementById("blending-for");
@@ -264,7 +278,7 @@ function materialChecker(textarea, percentages){
     
     //Take the fabrics from "fabricInput", look for their corresponding details, and make a new object with them
     for(let i=0; i<fabricInput.length; i++){
-        let fabricName, fabricPerc, fabricType, fabricEnviro, fabricCare;
+        let fabricName, fabricPerc, fabricGrade, fabricType, fabricEnviro, fabricCare;
         
         for(let type in materialTypes){
             if(fabricInput[i] == type){
@@ -273,6 +287,9 @@ function materialChecker(textarea, percentages){
 
                     if(details.includes("Type")){
                         fabricType = materialTypes[type][details];
+                    }
+                    if(details.includes("Grade")){
+                        fabricGrade = materialTypes[type][details];
                     }
                     if(details.includes("Environmental Impact")){
                         fabricEnviro = materialTypes[type][details];
@@ -285,7 +302,8 @@ function materialChecker(textarea, percentages){
         }
         fabricPerc = parseInt(percentages[i]);
 
-        let newFabric = new Fabric(fabricName, fabricPerc, fabricType, fabricEnviro, fabricCare);
+        let newFabric = new Fabric(fabricName, fabricPerc, fabricGrade, fabricType, fabricEnviro, fabricCare);
+        
         if(newFabric.percent > 100){
             newFabric.percent = 100;
         }
@@ -307,8 +325,6 @@ function materialChecker(textarea, percentages){
 function createRowDiv(){
     let thisDiv=document.getElementById("table-container");
     let container=document.createElement("div");
-    let linebreak=document.createElement("hr");
-    thisDiv.appendChild(linebreak);
     container.classList.add("results-row");
     thisDiv.appendChild(container);
 
@@ -328,56 +344,99 @@ function createColDiv(counter){
     container.appendChild(largeCol);
 }
 
-//Create divs inside description div (right column) for result
+function upperCaseName(fabname){
+    fabname = fabname.split(" ");
+    for(i in fabname){
+        fabname[i] = fabname[i].charAt(0).toUpperCase() + fabname[i].substring(1);
+    }
+    fabname = fabname.join(" ");
+    return fabname;
+}
+
+//Create inner divs
 function createColDivDesc(counter, fab){
+    //thatDiv = left image column
+    let thatDiv = document.querySelectorAll('.results-table-small')[counter];
+    //thisDiv = right text description column
     let thisDiv=document.querySelectorAll('.results-table-large')[counter];
-    
     let name=document.createElement("div");
     name.classList.add('results-material-head');
     thisDiv.appendChild(name);
-    if(fab.percent){
-        name.innerHTML="<b>" + fab.name.charAt(0).toUpperCase() + fab.name.slice(1) + " " + fab.percent + "%</b>";
-    }
-    else{name.innerHTML="<b>" + fab.name.charAt(0).toUpperCase() + fab.name.slice(1) + "</b>";}
     
+    let fabNameLower = fab.name.replace(/\s+/g, '-').toLowerCase();
+    let fabNameUpper = fab.name.charAt(0).toUpperCase() + fab.name.slice(1);
+    let fabGrade = fab.grade;
+    let fabType = fab.type;
+    let fabEnviro = fab.enviro;
+    let fabCare = fab.care;
+
+    //Change thatDiv (left column) background image
+    thatDiv.style.backgroundImage  = "url('images/" + fabNameLower + "-result.png')";
+
+    //If name of fab.name is more than one word, turn fab.name into an array to lower case all the first letters
+    if (/\s/.test(fab.name)) {
+        fabNameUpper = upperCaseName(fab.name);
+    }
+    
+    //If fab.percent is NaN, then don't display it
+    if(fab.percent){
+        name.innerHTML="<b>" + fabNameUpper + " " + fab.percent + "%</b>";
+    }
+    else{name.innerHTML="<b>" + fabNameUpper + "</b>";}
+    
+    //Display grade tag
+    let grade=document.createElement("div");
+    grade.classList.add('results-grade');
+    thisDiv.appendChild(grade);
+
+    grade.innerHTML="Overall grade: " + fabGrade;
+    if(fabGrade == "A"){
+        grade.style.backgroundColor = "rgb(15, 143, 15)";
+    }
+    if(fabGrade == "B"){
+        grade.style.backgroundColor = "rgb(102, 129, 3)";
+    }
+    if(fabGrade == "C"){
+        grade.style.backgroundColor = "rgb(185, 152, 1)";
+    }
+    if(fabGrade == "D"){
+        grade.style.backgroundColor = "rgb(160, 72, 0)";
+    }
+    if(fabGrade == "F"){
+        grade.style.backgroundColor = "rgb(160, 24, 0)";
+    }
+
+    //Create subheads and descriptions
     let type=document.createElement("div");
     type.classList.add('results-material-subhead');
     thisDiv.appendChild(type);
-    type.innerHTML="<b>Type:</b> " + fab.type;
-
+    type.innerHTML="<b>Type:</b> " + fabType;
+    
     let typeDesc=document.createElement("div");
     typeDesc.classList.add('results-material-desc');
     thisDiv.appendChild(typeDesc); 
-    typeDesc.innerHTML = $(typeDesc).load("fabric-type/" + fab.name.toLowerCase() + ".txt");
+    typeDesc.innerHTML = $(typeDesc).load("fabric-type/" + fabNameLower + ".txt");
         
     let enviro=document.createElement("div");
     enviro.classList.add('results-material-subhead');
     thisDiv.appendChild(enviro);
-    enviro.innerHTML="<b>Environmental Impact:</b> " + fab.enviro
+    enviro.innerHTML="<b>Environmental Impact:</b> " + fabEnviro;
 
     let enviroDesc=document.createElement("div");
     enviroDesc.classList.add('results-material-desc');
     thisDiv.appendChild(enviroDesc);
-    enviroDesc.innerHTML = $(enviroDesc).load("fabric-enviro/" + fab.name.toLowerCase() + ".txt");
+    enviroDesc.innerHTML = $(enviroDesc).load("fabric-enviro/" + fabNameLower + ".txt");
 
     let care=document.createElement("div");
     care.classList.add('results-material-subhead');
     thisDiv.appendChild(care);
-    care.innerHTML = "<b>Care:</b> " + fab.care
+    care.innerHTML = "<b>Care:</b> " + fabCare;
 
     let careDesc=document.createElement("div");
     careDesc.classList.add('results-material-desc');
     thisDiv.appendChild(careDesc);
-    careDesc.innerHTML = $(careDesc).load("fabric-care/" + fab.name.toLowerCase() + ".txt")
+    careDesc.innerHTML = $(careDesc).load("fabric-care/" + fabNameLower + ".txt");
         
-}
-
-//Create image inside image container div (left column) for result
-function createColDivPic(counter, fab){
-    let thisDiv=document.querySelectorAll('.results-table-small')[counter];
-    let img = document.createElement("img");
-    img.src = "images/" + fab.name + "-result.png";
-    thisDiv.appendChild(img);
 }
 
 //Add a note if percentages don't add to 100
@@ -387,7 +446,8 @@ function percentageChecker(){
         percentCounter+= materialObjects[i].percent;
     }
 
-    if((percentCounter != 100) && percentCounter != null){
+    if((percentCounter != 100) && !isNaN(percentCounter)){
+        console.log(percentCounter);
         createRowDiv();
 
         let wrapper=document.querySelectorAll(".results-row");
@@ -412,10 +472,13 @@ function percentageChecker(){
 materialObjects.sort(({percent:a}, {percent:b}) => b-a);
 
 for(i in materialObjects){
+    // console.log("matObjIndex: " + (i-1) + "| matObjName: " + materialObjects[i].name);
+    console.log(materialObjects[i].name + " " + i );
     createRowDiv()
     createColDiv(i)
     createColDivDesc(i, materialObjects[i])
-    createColDivPic(i, materialObjects[i])
+    // createColDivPic(materialObjects[i])
 }
+
 
 percentageChecker()  

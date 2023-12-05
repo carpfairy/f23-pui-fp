@@ -1,1 +1,10 @@
-Acrylic is a synthetic fiber made from reacting petroleum (coal-based) chemicals with a variety of monomers. It is one of the least breathable forms of textiles, which means it is often used for winter clothing such as sweaters. It has a wool-like texture, making it a cheaper alternative. It retains its shape and resists shrinkage and wrinkles. However, it is prone to static and pilling, and is not a durable material. It is heat sensitive and melts when it burns, and is dissolved by nail polish remover. 
+<li> Breathability: D
+<li> Durability: C
+<li> Sweat absorption: D
+<li> Comfort: B
+<li> Price: $
+<li> What it's good for: Keeping warm during cold weather
+<br>
+<br>
+
+Because acrylic is one of the least breathable textiles, it is often used for cold-weather clothing. It is a cheaper alternative to wool, since it has a similar texture. However, it is prone to static and pilling. It is heat-senstitive, melts when it burns, and is dissolved by nail polish remover.

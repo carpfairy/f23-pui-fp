@@ -1,3 +1,10 @@
-Cotton is one of the world’s most popular and versatile textiles, and it's often the best choice for clothing. Cotton is unbeatable in terms of durability, breathability, sweat-absorption, and comfort. It works well in a wide range of tempearture conditions. It does not promote odor-causing bacteria, unlike synthetic alternatives such as polyester.  
- 
-Organic cotton is the top tier choice for clothing, since no harmful chemicals are used in production. 
+<li> Breathability: A
+<li> Durability: A
+<li> Sweat absorption: A
+<li> Comfort: A
+<li> Price: $
+<li> What it's good for: All temperatures
+
+<br> 
+<br>
+Cotton is often the best choice for clothing. It is versatile and durable, and often looks higher quality than synthetic alternatives. 
