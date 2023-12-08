@@ -1,0 +1,9 @@
+<li> Breathability: C
+<li> Durability: A
+<li> Sweat-friendly: B
+<li> Comfort: B
+<li> Price: $
+<li> What it's good for: Stockings
+<br>
+<br>
+Polyamide is a term used to refer to a variety of different fabrics made from polyamides, such as nylon.

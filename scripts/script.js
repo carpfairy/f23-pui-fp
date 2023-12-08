@@ -22,7 +22,7 @@ const materialTypes = {
         "Type":"Natural",
         "Grade": "A",
         "Environmental Impact":"B",
-        "Care":"Medium"
+        "Care":"Easy"
     },
 
     "down":{
@@ -49,7 +49,7 @@ const materialTypes = {
     "linen":{
         "Type":"Natural",
         "Grade": "A",
-        "Enviromental Impact":"A",
+        "Environmental Impact":"A",
         "Care": "Easy"
     },
 
@@ -58,6 +58,13 @@ const materialTypes = {
         "Grade": "C",
         "Environmental Impact":"C",
         "Care":"Easy"
+    },
+    
+    "polyamide":{
+        "Type":"Synthetic",
+        "Grade": "C",
+        "Environmental Impact":"C",
+        "Care": "Easy"
     },
 
     "polyester":{
@@ -106,7 +113,7 @@ const materialTypes = {
         "Type": "Natural",
         "Grade": "A",
         "Environmental Impact":"A-",
-        "Care":"Easy"
+        "Care":"Hard"
     },
     
 }
@@ -196,10 +203,13 @@ if(window.location.href.indexOf("results") > -1){
         clothtype = clothtype[0];
         clothtype = clothtype.toString();
 
-        let clothtypeDesc= document.createElement("div");
-        clothtypeDesc.classList.add("results-clothtype-desc");
-        clothtypeWrapper.appendChild(clothtypeDesc);   
-        clothtypeDesc.innerHTML = $(clothtypeDesc).load("clothing-type/" + clothtype + ".txt");
+        let clothtypeDescOuter= document.createElement("div");
+        clothtypeDescOuter.classList.add("results-clothtype-desc-container");
+        clothtypeWrapper.appendChild(clothtypeDescOuter);
+        let clothtypeDescInner =document.createElement("div");
+        clothtypeDescInner.classList.add("results-clothtype-desc");
+        clothtypeDescOuter.appendChild(clothtypeDescInner);
+        clothtypeDescInner.innerHTML = $(clothtypeDescInner).load("clothing-type/" + clothtype + ".txt");
        
     }
 
@@ -368,8 +378,11 @@ function createColDivDesc(counter, fab){
     let fabEnviro = fab.enviro;
     let fabCare = fab.care;
 
-    //Change thatDiv (left column) background image
-    thatDiv.style.backgroundImage  = "url('images/" + fabNameLower + "-result.png')";
+    //Add picture of fabric to thatDiv (left column)
+    let clothingImg = document.createElement('img');
+    clothingImg.src = "images/" + fabNameLower + "-result.png";
+    clothingImg.alt = "Close up picture of " + fabNameLower + " fabric material to show texture";
+    thatDiv.appendChild(clothingImg);
 
     //If name of fab.name is more than one word, turn fab.name into an array to lower case all the first letters
     if (/\s/.test(fab.name)) {
@@ -389,19 +402,19 @@ function createColDivDesc(counter, fab){
 
     grade.innerHTML="Overall grade: " + fabGrade;
     if(fabGrade == "A"){
-        grade.style.backgroundColor = "rgb(15, 143, 15)";
+        grade.style.backgroundColor = "rgb(47, 129, 32)";
     }
     if(fabGrade == "B"){
-        grade.style.backgroundColor = "rgb(102, 129, 3)";
+        grade.style.backgroundColor = "rgb(95, 118, 4)";
     }
     if(fabGrade == "C"){
-        grade.style.backgroundColor = "rgb(185, 152, 1)";
+        grade.style.backgroundColor = "rgb(118, 59, 4)";
     }
     if(fabGrade == "D"){
-        grade.style.backgroundColor = "rgb(160, 72, 0)";
+        grade.style.backgroundColor = "rgb(118, 31, 4)";
     }
     if(fabGrade == "F"){
-        grade.style.backgroundColor = "rgb(160, 24, 0)";
+        grade.style.backgroundColor = "rgb(118, 12, 4)";
     }
 
     //Create subheads and descriptions
@@ -419,6 +432,8 @@ function createColDivDesc(counter, fab){
     enviro.classList.add('results-material-subhead');
     thisDiv.appendChild(enviro);
     enviro.innerHTML="<b>Environmental Impact:</b> " + fabEnviro;
+   
+   
 
     let enviroDesc=document.createElement("div");
     enviroDesc.classList.add('results-material-desc');
@@ -470,13 +485,17 @@ function percentageChecker(){
 materialObjects.sort(({percent:a}, {percent:b}) => b-a);
 
 for(i in materialObjects){
-    // console.log("matObjIndex: " + (i-1) + "| matObjName: " + materialObjects[i].name);
-    console.log(materialObjects[i].name + " " + i );
     createRowDiv()
     createColDiv(i)
     createColDivDesc(i, materialObjects[i])
-    // createColDivPic(materialObjects[i])
 }
 
 
 percentageChecker()  
+
+let typed= new Typed('.auto-type', {
+    strings:["favorite sweater.", "favorite top.", "favorite jacket.", "workout leggings.", "new coat.", "next shopping spree.", "evening gown.", "button down.", "button up.", "wardrobe."],
+    typeSpeed:40,
+    backSpeed:40,
+    looped:true
+})

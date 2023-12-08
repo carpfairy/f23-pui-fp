@@ -1,3 +1,7 @@
-Down can have a complicated care process. Read care instructions on the label carefully.
-
-Generally, down items should be machine washed in cold water with a down-specific detergent. Use a front-loading washer to prevent compression. To dry, tumble dry on low heat with a few clean tennis balls or dryer balls to fluff the down clusters. It's crucial to ensure the down item is thoroughly dry to prevent mildew and maintain its insulation properties. Regularly fluff and shake the item during drying to redistribute the down evenly. Avoid hanging down items, as this can lead to loss of loft.
+<b>Read care instructions on label carefully!</b>
+<li> Machine wash in cold water with down-specific detergent
+<li> Use front-loading washer to prevent compression
+<li> Tumble dry on low with tennis balls to fluff down clusters
+<li> Regularly fluff and shake the itemd uring drying to redistribute down evenly
+<li> Ensure down item is thoroughly dry to prevent mildew and maintain
+<li> Avoid hanging down items, as this can lead to loss of loft

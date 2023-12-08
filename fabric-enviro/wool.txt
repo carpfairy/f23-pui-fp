@@ -1,3 +1,11 @@
-Wool is a natural fiber, meaning it is biodegradable. Wool usually refers to the coats of sheep, although it can also be sourced from goats, camels, alpacas, llama, yaks, possums, rabbits, and more. The most popular breed for creating wool garments is Merino. 
+<li> Biodegradable: Yes
+<li> Renewable: Yes
+<li> Made from: Sheep hair
+<br>
+<br>
 
-While wool is a renewable resource, the production and farming required can leave significant negative impacts on the environment and animal welfare. The environmental impact is determined heavily by farming practices, and it is up to farmers’ discretion that the grasslands used are maintained.
+Wool usually refers to the coats of sheep, although it can also be sourced from goats, camels, alpacas, llama, yaks, possums, rabbits, and more. The most popular breed for creating wool garments is Merino. The environmental impact of wool production is determined heavily by farming practices, and it is up to farmers’ discretion that the grasslands used are maintained.
+
+<div class="results-ethics">
+<b>Ethical Concerns:</b> Sheep are generally killed for their flesh as soon as their wool quality degrades. The ethics behind sheep farming vary depending on the farm they are sourced from. 
+</div>

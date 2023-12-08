@@ -1,3 +1,7 @@
-Rayon is a semi-synthetic fiber created by dissolving the cellulose of plants in a chemical solution, and then spinning it into threads. The fiber itself is biodegradable and non-toxic, but the way that it is manufactured can be harmful to factory workers as well as the environment.
+<li> Biodegradable: Yes
+<li> Renewable: Yes
+<li> Made from: Trees (plant cellulose)
+<br>
+<br>
 
 Rayon is typically made from eucalyptus, spruce, and pine trees. It can also be made from cotton or bamboo. While there are sustainable methods to source rayon, the Textile Exchange estimated that they were only applied 29% of the time. The Canopy Planet estimates that a third of wood pulp used come from ancient and endangered forests.

@@ -1,3 +1,11 @@
-Silk is the only natural filament fiber, with filament from one cocoon measuring up to 1000 yards. Silk production relies on the growth of mulberry trees, which are used to feed the silkworms. Silkworms are also boiled and killed in the process of making silk, which can raise ethical concerns. About 3,000 cocoons are used to make one yard of silk. One hectare (about 2.5 acres) of mulberry trees produces enough food for worms to produce about 85 lbs of silk.
+<li> Biodegradable: Yes
+<li> Renewable: Yes
+<li> Made from: Silkworms
+<br>
+<br>
 
-Generally speaking, silk is considered a more sustainable fiber. It is a renewable resource, can biodegrade, and uses less water and chemicals than many other fibers.
+Silk is a natural filament fiber made from the cocoons of silk moths. It is one of the most environmentally friendly fabrics in the industry. One cocoon can produce up to 1,000 yards of silk. About 3,000 cocoons are used to make one yard of silk. One hectare (2.5 acres) of mulberry trees produces enough food for silkworms to produce about 85lbs of silk. 
+
+<div class="results-ethics">
+<b>Ethical Concerns:</b> In order to produce silk, silkworms are boiled. Silkworms have been farmed and domesticated to the point where they can not survive on their own, and rely on humans for caretaking. 
+</div>

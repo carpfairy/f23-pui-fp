@@ -2,8 +2,8 @@
 <li> Durability: A
 <li> Sweat-friendly: B
 <li> Comfort: B
-<li> Price: $$
-<li> What it's good for: Exercise clothing
+<li> Price: $
+<li> What it's good for: Exercise clothing, stockings
 <br>
 <br>
 
