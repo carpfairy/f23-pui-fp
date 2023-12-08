@@ -67,12 +67,14 @@ body {
     font-family: "Consolas";
     /* border:solid 2px black; */
 }
-.heading{
-    margin-left:30px;
+h1, h2 {
+    margin-left:50px;
 }
-.heading img{
-    height: 100px;
+
+h1 img{
+    height: 70px;
 }
+
 
 .heading-container{
     border:solid 2px blue;
@@ -116,6 +118,11 @@ body {
     92.4% { background-image: url('images/ClothMaterial_Layer13.jpg'); }
 }
 
+.main-desc-flex-container{
+    display:flex;
+    margin-bottom:10px;
+}
+
 .main-desc{
     margin-right:50px;
     margin-left:50px;
@@ -134,16 +141,22 @@ select{
     font-size:16px;
 }
 
+.tag-flex-container{
+    display:flex;
+    flex-grow:1;
+    margin-right:100px;
+    /* border:solid 2px pink; */
+}
 
 .tag{
-    flex:100%;
-    display:inline;
-    margin-left:auto;
-    margin-right:auto;
+    display:flex;
+    
 }
 
 .tag img{
-    height:100px;
+    display:flex;
+    height:150px;
+    
 }
 
 .main-clothtype{
@@ -157,10 +170,12 @@ select{
 
 .main-tag-desc{
     display:flex;
-    font-size:12px;
-    color:rgb(100, 100, 100);
+    margin-bottom:15px;
+    font-size:13px;
+    color:rgb(73, 73, 73);
     margin-right:10px;
     flex-direction:column;
+    flex-shrink:.95;
     /* background: -webkit-linear-gradient(#3FAEFF, #3E45FF, #969AFF,#DA8AFF);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; */
@@ -191,7 +206,8 @@ select{
     margin-left:25px;
     font-family: "Inter";
     font-size: 26px;
-
+    min-width:180px;
+    /* border: solid 2px lime; */
 }
 
 .results-clothtype-cons{
@@ -308,4 +324,17 @@ input[type=submit]{
     font-size:12px;
     line-height:18px;
 
+}
+
+.question-img{
+    margin-right:200px;
+    height:500px;
+    /* border:solid 2px green; */
+}
+
+.question-img img{
+    opacity:0.5;
+    float:right;
+    height:100%;
+    
 }

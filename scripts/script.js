@@ -147,16 +147,6 @@ function getTextArea(){
 
 }
 
-// function checkEmpty() {
-//     var x;
-//     x = document.getElementById("textarea").value;
-//     if (x == "") {
-//         alert("Enter material type");
-//         return false;
-//     };
-// }
-
-
 if(window.location.href.indexOf("main") > -1){
     clothingTypeDropDown()
 
@@ -263,16 +253,24 @@ function materialChecker(textarea, percentages){
     
     //If there are no matches between textarea and the list of fabric names, display an error page
     if(fabricInput.length == 0){
-        let blendingfor = document.getElementById("blending-for");
-        blendingfor.innerHTML = "oops.. we couldn't find that fabric.";
+        let thisDiv = document.querySelector(".results-clothtype-inter");
+        thisDiv.innerHTML = "oops.. we couldn't find that fabric.";
         let clothtype = document.getElementById("clothtype");
         clothtype.remove();
-
-        thisDiv = document.querySelector('.results-clothtype-inter');
         let newDiv = document.createElement("p");
-        newDiv.innerHTML = "Go back and check your spelling!";
-        
         thisDiv.appendChild(newDiv);
+        newDiv.textContent = "go back and check your spelling!"
+
+        let table = document.querySelector(".results-container");
+        let questionImageDiv = document.createElement("div");
+        questionImageDiv.classList.add("question-img");
+        table.appendChild(questionImageDiv);
+        let questionImg = document.createElement('img');
+        questionImg.src = "images/question-ascii.png";
+        questionImageDiv.appendChild(questionImg);
+        
+
+
 
     }
     
@@ -445,8 +443,8 @@ function percentageChecker(){
     for(i in materialObjects){
         percentCounter+= materialObjects[i].percent;
     }
-
-    if((percentCounter != 100) && !isNaN(percentCounter)){
+    
+    if((percentCounter != 100) && !isNaN(percentCounter) && percentCounter!=0){
         console.log(percentCounter);
         createRowDiv();
 
