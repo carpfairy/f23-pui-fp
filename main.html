@@ -1,85 +1,87 @@
 <!DOCTYPE html>
     <html lang="en">
-    <meta charset="UTF-8">
+    
     <head>
+        <meta charset="UTF-8">
         <title>blend: fabric decoder</title>
         <link rel="stylesheet" href="style.css">
         <script src="scripts/jquery.min.js" defer></script>
         <script src="scripts/script.js" defer></script>
         <script src="scripts/blotter.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <meta name="viewport" content="width=divce-width; initial-scale=1.0">
     </head>
 
-
-    <div class="main-flex-container">
-        <div class="gif-flex-box">
-            <div class="gif" role="img" aria-label="A gif picture showing various zoomed-in pictures of fabrics, such as wool or leather, to show texture">
+    <body>
+        <div class="main-flex-container">
+            <div class="gif-flex-box">
+                <div class="gif" role="img" aria-label="A gif picture showing various zoomed-in pictures of fabrics, such as wool or leather, to show texture">
+                </div>
             </div>
-        </div>
-        <div class="main-flex-container-col">
-            <h1>
-                <a href="main.html">
-                    <img src="images/blend-logo.png" alt="Home page of blend">
-                </a>
-            </h1>
-            <h2>
-                blend:decode your <span class="auto-type"></span>
-            </h2>
             <div class="main-flex-container-col">
-                <div class="flex-container">
-                    <div class="main-desc">
-                        <p><b>blend</b> is here to tell you all about the blend of your fabric composition.</p>
-                        <p>type your fabric content and % as you see it on your clothing tag, or copy paste from the shopping website under "composition".</p>
-                        <br>
-                        <div class="main-desc-flex-container">
-                            <div class="main-tag-desc" >
-                                <div class="main-tag-instructions">
-                                    <b>Instructions:</b>
+                <h1>
+                    <a href="main.html">
+                        <img src="images/blend-logo.png" alt="Home page of blend">
+                    </a>
+                </h1>
+                <h2>
+                    blend:decode your <span class="auto-type"></span>
+                </h2>
+                <div class="main-flex-container-col">
+                    <div class="flex-container">
+                        <div class="main-desc">
+                            <p><b>blend</b> is here to tell you all about the blend of your fabric composition.</p>
+                            <p>type your fabric content and % as you see it on your clothing tag, or copy paste from the shopping website under "composition".</p>
+                            <br>
+                            <div class="main-desc-flex-container">
+                                <div class="main-tag-desc" >
+                                    <div class="main-tag-instructions">
+                                        <b>Instructions:</b>
+                                    </div>
+                                    <div class="main-tag-desc">                             
+                                        Find the tag inside of your clothing item. 
+                                        Or, copy paste the fabric content under the "Materials" or "Composition" section of an online shopping site.
+                                        Type the composition label as you see it ("x% fabric" or "fabric x%") into the text box, separated by a comma.  
+                                    </div>                                          
                                 </div>
-                                <div class="main-tag-desc">                             
-                                    Find the tag inside of your clothing item. 
-                                    Or, copy paste the fabric content under the "Materials" or "Composition" section of an online shopping site.
-                                    Type the composition label as you see it ("x% fabric" or "fabric x%") into the text box, separated by a comma.  
-                                </div>                                          
-                            </div>
 
-                            <div class="tag-flex-container">
-                                <div class="tag">
-                                    <img src="images/tag.png" alt="Picture of a clothing tag, with the fabric composition percentages circled">
-                                </div>
-                                <div class="tag">
-                                        <img src="images/comp-desc.png" alt="Picture of the Composition section of a clothing website, with the fabric composition percentages circled">
+                                <div class="tag-flex-container">
+                                    <div class="tag">
+                                        <img src="images/tag.png" alt="Picture of a clothing tag, with the fabric composition percentages circled">
+                                    </div>
+                                    <div class="tag">
+                                            <img src="images/comp-desc.png" alt="Picture of the Composition section of a clothing website, with the fabric composition percentages circled">
+                                    </div>
                                 </div>
                             </div>
+                            <br />
+
+                            <form>
+                                <div class="flex-container">
+                                    <div class="container">
+                                        <label for="clothingDropDown"><b>clothing type:</b></label>
+                                    </div>
+                                    <div class="main-clothtype">
+                                        <select id="clothingDropDown" name="clothingDropDown">
+                                            <option value="select">--Select a clothing type--</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <label for="textarea"><b>composition:</b></label>
+                                    <textarea required id="textarea" name="textarea" rows="5" cols ="1" minlength="2" maxlength="1000" placeholder="Cotton 60%, Polyester 35%, Elastane 5%"></textarea>
+                                    <div class="submit-button">
+                                    
+                                        <input type="submit" value="submit"></input>
+                                    
+                                    </div>
+                            </form>
+                            
                         </div>
-                        <br />
-
-                        <form>
-                            <div class="flex-container">
-                                <div class="container">
-                                    <label for="clothingDropDown"><b>clothing type:</b></label>
-                                </div>
-                                <div class="main-clothtype">
-                                    <select id="clothingDropDown" name="clothingDropDown">
-                                        <option value="select">--Select a clothing type--</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <label for="textarea"><b>composition:</b></label>
-                                <textarea required id="textarea" name="textarea" rows="5" cols ="1" minlength="2" maxlength="1000" placeholder="Cotton 60%, Polyester 35%, Elastane 5%"></textarea>
-                                <div class="submit-button">
-                                  
-                                    <input type="submit" value="submit"></input>
-                                 
-                                </div>
-                        </form>
                         
                     </div>
-                    
                 </div>
             </div>
         </div>
-    </div>
-
+    </body>
 </html>
