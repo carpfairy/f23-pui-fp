@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Consolas';
-    src: url('fonts/consolas.ttf') format('woff2'),
+    src: url('fonts/consolas.ttf') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -222,6 +222,7 @@ select{
 .results-row {
     display:flex;
     border-top:solid 1px gray;
+    font-family:"Inter";
     /* border:solid 2px aqua; */
 }
 
