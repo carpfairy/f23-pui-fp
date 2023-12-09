@@ -176,6 +176,14 @@ if(window.location.href.indexOf("main") > -1){
         
     });
 
+    let typed= new Typed('.auto-type', {
+        strings:["favorite sweater.", "favorite top.", "favorite jacket.", "workout leggings.", "new coat.", "next shopping spree.", "evening gown.", "button down.", "button up.", "wardrobe."],
+        typeSpeed:40,
+        backSpeed:40,
+        looped:true
+    })
+    
+
    
 }
 
@@ -183,7 +191,6 @@ if(window.location.href.indexOf("main") > -1){
 if(window.location.href.indexOf("results") > -1){
     let formresults;
     let results;
-    console.log(localStorage.getItem('form'));
 
     //Non-empty input
     formresults = JSON.parse(localStorage.getItem('form'));
@@ -194,7 +201,7 @@ if(window.location.href.indexOf("results") > -1){
 
     
     //Add description for what clothing type was selected
-    if(!(clothtype == "select")){
+    if(!(clothtype == "select") && (materialObjects.length!= 0)){
         let clothtypeDiv = document.getElementById("clothtype")
         clothtypeDiv.innerHTML = clothtype;
 
@@ -207,6 +214,7 @@ if(window.location.href.indexOf("results") > -1){
         clothtypeDescOuter.classList.add("results-clothtype-desc-container");
         clothtypeWrapper.appendChild(clothtypeDescOuter);
         let clothtypeDescInner =document.createElement("div");
+        
         clothtypeDescInner.classList.add("results-clothtype-desc");
         clothtypeDescOuter.appendChild(clothtypeDescInner);
         clothtypeDescInner.innerHTML = $(clothtypeDescInner).load("clothing-type/" + clothtype + ".txt");
@@ -277,6 +285,7 @@ function materialChecker(textarea, percentages){
         table.appendChild(questionImageDiv);
         let questionImg = document.createElement('img');
         questionImg.src = "images/question-ascii.png";
+        questionImg.alt = "Picture of an ASCII-art style question mark"
         questionImageDiv.appendChild(questionImg);
         
 
@@ -493,9 +502,3 @@ for(i in materialObjects){
 
 percentageChecker()  
 
-let typed= new Typed('.auto-type', {
-    strings:["favorite sweater.", "favorite top.", "favorite jacket.", "workout leggings.", "new coat.", "next shopping spree.", "evening gown.", "button down.", "button up.", "wardrobe."],
-    typeSpeed:40,
-    backSpeed:40,
-    looped:true
-})

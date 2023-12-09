@@ -62,66 +62,6 @@ body {
     height:100vh;
 }
 
-@media (max-width:600px) {
-    html, body{
-        overflow-x:hidden;
-        position:relative;
-        background-size:100vh;
-    }
-
-    .gif, .gif-flex-box {
-        display:none;
-        background-image:none;
-        max-height:0px;
-    }
-
-    h1 img{
-        max-height:40px;
-        margin: 10px 0px 0px 0px;
-       
-    }
-
-    h2 {
-       font-size:18px;
-    }
-
-    p {
-        font-size:16px;
-        max-width:80vw;
-    }
-    
-   
-    .main-flex-container{
-        align-content:start;
-        max-width:100vw;
-        flex-wrap:wrap;
-        margin-left:0px;
-    }
-
-    .main-desc, .flex-container-col, .main-desc-flex-container {
-        flex-wrap:wrap;
-        text-wrap:wrap;
-    }
-
-    .main-tag-desc{
-        max-width:80vw;
-        font-size:14px;
-    }
-
-    .tag img{
-        max-height:100px;
-    }
-
-    form, select {
-        max-width:80%;
-    }
-
-    .main-clothtype{
-        margin-bottom:30px;
-    }
-
-    
-}
 
 .container{
     font-family: "Consolas";
@@ -427,4 +367,93 @@ input[type=submit]{
     float:right;
     height:100%;
     
+}
+
+@media (max-width:600px) {
+    html, body{
+        /* overflow-x:hidden; */
+        position:relative;
+        background-size:100vh;
+    }
+
+    .gif, .gif-flex-box {
+        display:none;
+        background-image:none;
+        max-height:0px;
+    }
+
+    h1 img{
+        max-height:40px;
+        margin: 10px 0px 0px 0px;
+       
+    }
+
+    h2 {
+       font-size:18px;
+    }
+
+    p {
+        font-size:16px;
+        max-width:80vw;
+    }
+   
+    .main-flex-container{
+        align-content:start;
+        max-width:100vw;
+        flex-wrap:wrap;
+        margin-left:0px;
+    }
+
+    .main-desc, .flex-container-col, .main-desc-flex-container {
+        flex-wrap:wrap;
+        text-wrap:wrap;
+    }
+
+    .main-tag-desc{
+        max-width:80vw;
+        font-size:14px;
+    }
+
+    .tag img{
+        max-height:100px;
+    }
+
+    form, select {
+        max-width:80%;
+    }
+
+    .main-clothtype{
+        margin-bottom:30px;
+    }
+
+    #rci-column {
+        display:none;
+    }
+
+    .results-clothtype-desc-container{
+        min-width:90%
+    }
+
+    .results-table-large{
+        font-size:18px;
+    }
+
+    .results-material-subhead{
+        font-size:20px;
+    }
+
+    .results-table-large{
+        margin-right:0px;
+    }
+    .results-table-small {
+        max-width: 60px;
+        min-width:60px;
+        margin:0px 0px 0px 0px;
+    }
+
+
+    .results-material-desc{
+        font-size:15px;
+
+    }
 }

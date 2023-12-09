@@ -6,6 +6,7 @@
         <script src="scripts/jquery.min.js" defer></script>
         <script src="scripts/script.js" defer></script>
         <title>blend: fabric decoded</title>
+        <meta name="viewport" content="width=divce-width; initial-scale=1.0">
     </head>
 
     <h1>
@@ -13,25 +14,25 @@
             <img src="images\blend-logo.png" alt="Home page of blend">
         </a>
     </h1>
-
-    <div class="results-flex-container">
-        <div class="flex-container-col">
-            <div class="flex-container" >
-                <div class="results-clothtype-inter" id="blending-for" style="min-width:180px;">
-                    <b>blending for:</b>
+    <body>
+        <div class="results-flex-container">
+            <div class="flex-container-col">
+                <div class="flex-container" >
+                    <div class="results-clothtype-inter" id="blending-for">
+                        <b>blending for:</b>
+                    </div>
+                    <div class="results-clothtype-cons" id="clothtype">
+                    </div>
                 </div>
-                <div class="results-clothtype-cons" id="clothtype">
+                <div class="flex-container" id="results-clothtype">
+                    <div class="results-clothtype-inter" id="rci-column">
+                    </div>
                 </div>
             </div>
-            <div class="flex-container" id="results-clothtype">
-                <div class="results-clothtype-inter" style="min-width:180px;">
-                </div>
-            </div>
+            
         </div>
-        
-    </div>
 
-    <div class="results-container" id="table-container">
-    </div>
-
+        <div class="results-container" id="table-container">
+        </div>
+    </body>
 </html>
