@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'Consolas';
-    src: url('../fonts/subset-Consolas.woff2') format('woff2'),
-        url('../fonts/subset-Consolas.woff') format('woff');
+    src: url('fonts/consolas.ttf') format('woff2'),
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -9,7 +8,7 @@
 
 @font-face{
     font-family: 'Inter';
-    src: url('../Inter-Regular.ttf') format('ttf');
+    src: url('fonts/Inter-Regular.ttf') format('ttf');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -163,6 +162,7 @@ select{
 
 .main-clothtype{
     margin-left: 20px;
+    margin-bottom:20px;
 }
 
 .results-clothtype{
