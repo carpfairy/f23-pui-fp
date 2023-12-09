@@ -158,8 +158,8 @@ function getTextArea(){
 if(window.location.href.indexOf("main") > -1){
     clothingTypeDropDown()
 
-    //Clear localstorage
-    // console.log(localStorage.clear());
+    //Empty localStorage
+    
 
     //Link submit button to next page
     form.addEventListener('submit', (e) => {
@@ -197,7 +197,16 @@ if(window.location.href.indexOf("results") > -1){
     let results;
 
     //Empty input
-    
+    if(localStorage.getItem("form") == null){
+        let tableDiv = document.getElementById('table-container');
+        let errorMsg = document.createElement("div");
+        errorMsg.classList.add('results-percent-error');
+        tableDiv.appendChild(errorMsg);
+        errorMsg.innerHTML = 'No fabrics were inputted. Go back to the <a href="main.html" alt="blend home page">home page</a> to enter fabrics.';
+        let blendingfor = document.getElementById("blending-for");
+        blendingfor.remove();
+    }
+
     //Non-empty input
     formresults = JSON.parse(localStorage.getItem('form'));
     results = Object.values(formresults);
@@ -293,12 +302,8 @@ function materialChecker(textarea, percentages){
         questionImg.src = "images/question-ascii.png";
         questionImg.alt = "Picture of an ASCII-art style question mark"
         questionImageDiv.appendChild(questionImg);
-        
-
-
-
     }
-    
+
     //Take the fabrics from "fabricInput", look for their corresponding details, and make a new object with them
     for(let i=0; i<fabricInput.length; i++){
         let fabricName, fabricPerc, fabricGrade, fabricType, fabricEnviro, fabricCare;
@@ -486,7 +491,7 @@ function percentageChecker(){
         wrapper.appendChild(errorDiv);
 
         if(percentCounter < 100){
-            errorDiv.innerHTML = "Your blend doesn't add to 100%. Did we miss one? <br> Or did you?";
+            errorDiv.innerHTML = "Your blend doesn't add to 100%. This might be because you input a fabric we don't know about yet, or you misentered something.";
         }
         if(percentCounter > 100){
             errorDiv.innerHTML = "Your blend is more than 100%... what could you possibly be wearing?";
@@ -499,7 +504,7 @@ function percentageChecker(){
 //Sorting by percentage
 materialObjects.sort(({percent:a}, {percent:b}) => b-a);
 
-//Animate logo
+//Animated logo
 // let container = document.querySelector("h1");
 // let text = new Blotter.Text("blend", {
 //     family: "Inter",
