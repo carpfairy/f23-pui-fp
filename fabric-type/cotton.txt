@@ -1,9 +1,9 @@
-<li> Breathability: A
-<li> Durability: A
-<li> Sweat absorption: A
-<li> Comfort: A
-<li> Price: $
-<li> What it's good for: All temperatures
+<li> <b>Breathability:</b> A
+<li> <b>Durability:</b> A
+<li> <b>Sweat absorption:</b> A
+<li> <b>Comfort:</b> A
+<li> <b>Price:</b> $
+<li> <b>What it's good for:</b> All temperatures
 
 <br> 
 <br>

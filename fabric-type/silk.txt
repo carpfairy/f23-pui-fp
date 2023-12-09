@@ -1,9 +1,9 @@
-<li> Breathability: A
-<li> Durability: A
-<li> Sweat-friendly: A
-<li> Comfort: A
-<li> Price: $$$$
-<li> What it's good for: Summer clothing
+<li> <b>Breathability:</b> A
+<li> <b>Durability:</b> A
+<li> <b>Sweat-friendly:</b> A
+<li> <b>Comfort:</b> A
+<li> <b>Price:</b> $$$$
+<li> <b>What it's good for:</b> Summer clothing
 <br>
 <br>
 Silk is a high quality, elegant, and timeless clothing material. It's prized for its softness, sheen, and temperature-regulating properties. It can be expensive and delicate, and requires special care. 

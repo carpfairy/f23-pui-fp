@@ -1,9 +1,9 @@
-<li> Breathability: A
-<li> Durability: C
-<li> Sweat-friendly: B
-<li> Comfort: B
-<li> Price: $
-<li> What it's good for: Dresses
+<li> <b>Breathability:</b> A
+<li> <b>Durability:</b> C
+<li> <b>Sweat-friendly:</b> B
+<li> <b>Comfort:</b> B
+<li> <b>Price:</b> $
+<li> <b>What it's good for:</b> Dresses
 <br>
 <br>
 

@@ -1,9 +1,9 @@
-<li> Breathability: A
-<li> Durability: A
-<li> Sweat-friendly: A
-<li> Comfort: B
-<li> Price: $$$$
-<li> What it's good for: Keeping warm during cold weather
+<li> <b>Breathability:</b> A
+<li> <b>Durability:</b> A
+<li> <b>Sweat-friendly:</b> A
+<li> <b>Comfort:</b> B
+<li> <b>Price:</b> $$$$
+<li> <b>What it's good for:</b> Keeping warm during cold weather
 <br>
 <br>
 

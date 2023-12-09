@@ -1,9 +1,9 @@
-<li> Breathability: A
-<li> Durability: B
-<li> Sweat-friendly: B
-<li> Comfort: A
-<li> Price: $$$$
-<li> What it's good for: Outerwear, such as jackets
+<li> <b>Breathability:</b> A
+<li> <b>Durability:</b> B
+<li> <b>Sweat-friendly:</b> B
+<li> <b>Comfort:</b> A
+<li> <b>Price:</b> $$$$
+<li> <b>What it's good for:</b> Outerwear, such as jackets
 <br>
 <br>
 

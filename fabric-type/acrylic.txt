@@ -1,9 +1,9 @@
-<li> Breathability: D
-<li> Durability: C
-<li> Sweat absorption: D
-<li> Comfort: B
-<li> Price: $
-<li> What it's good for: Keeping warm during cold weather
+<li> <b>Breathability:</b> D
+<li> <b>Durability:</b> C
+<li> <b>Sweat absorption:</b> D
+<li> <b>Comfort:</b> B
+<li> <b>Price:</b> $
+<li> <b>What it's good for:</b> Keeping warm during cold weather
 <br>
 <br>
 
