@@ -1,4 +1,4 @@
-let clothingTypeList = ["Shirt", "Blouse", "Pants", "Blazer", "Jeans", "Cardigan/Sweater", "Jacket/Coat", "Skirt", "Sweatshirt", "Exercise Clothing", "Undergarments", "Lingerie"]
+let clothingTypeList = ["Shirt", "Blouse", "Pants", "Blazer", "Jeans", "Cardigan/Sweater", "Jacket/Coat", "Skirt", "Sweatshirt", "Athleisure", "Undergarments", "Lingerie"]
 
 const form = document.querySelector('form');
 
@@ -154,9 +154,14 @@ function getTextArea(){
 
 }
 
+//If on the main homepage, generate the dropdown menu and link the form area
 if(window.location.href.indexOf("main") > -1){
     clothingTypeDropDown()
 
+    //Clear localstorage
+    // console.log(localStorage.clear());
+
+    //Link submit button to next page
     form.addEventListener('submit', (e) => {
         e.preventDefault(); 
         
@@ -176,14 +181,13 @@ if(window.location.href.indexOf("main") > -1){
         
     });
 
+    //Create typping animation
     let typed= new Typed('.auto-type', {
         strings:["favorite sweater.", "favorite top.", "favorite jacket.", "workout leggings.", "new coat.", "next shopping spree.", "evening gown.", "button down.", "button up.", "wardrobe."],
         typeSpeed:40,
         backSpeed:40,
         looped:true
     })
-    
-
    
 }
 
@@ -192,16 +196,18 @@ if(window.location.href.indexOf("results") > -1){
     let formresults;
     let results;
 
+    //Empty input
+    
     //Non-empty input
     formresults = JSON.parse(localStorage.getItem('form'));
     results = Object.values(formresults);
     
     let clothtype = results[0];
     let textarea = results[1];
-
+    
     
     //Add description for what clothing type was selected
-    if(!(clothtype == "select") && (materialObjects.length!= 0)){
+    if(!(clothtype == "select")){
         let clothtypeDiv = document.getElementById("clothtype")
         clothtypeDiv.innerHTML = clothtype;
 
@@ -493,12 +499,36 @@ function percentageChecker(){
 //Sorting by percentage
 materialObjects.sort(({percent:a}, {percent:b}) => b-a);
 
+//Animate logo
+// let container = document.querySelector("h1");
+// let text = new Blotter.Text("blend", {
+//     family: "Inter",
+//     size: 60,
+//     fill:"#000"
+// });
+
+// let material = new Blotter.LiquidDistortMaterial();
+// material.uniforms.uSpeed.value=0.1;
+// material.uniforms.uVolatility.value=0.15;
+// material.uniforms.uSeed.value=0.3;
+
+// let blotter=new Blotter(material, {texts:text});
+// let scope=blotter.forText(text);
+
+// scope.appendTo(container);
+
+
+
 for(i in materialObjects){
     createRowDiv()
     createColDiv(i)
     createColDivDesc(i, materialObjects[i])
 }
 
-
 percentageChecker()  
 
+//Animate scroll animation for results
+if(window.location.href.indexOf("results") > -1){
+    ScrollReveal().reveal('.results-flex-container', {delay: 100});
+    ScrollReveal().reveal('.results-row', {delay: 500});
+}

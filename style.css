@@ -18,7 +18,9 @@
 p {
     font-family:"Consolas";
     font-size:16px;
+    text-wrap:wrap;
 }
+
 html,body{
     margin:0;
     padding:0;
@@ -60,6 +62,7 @@ body {
 .main-flex-container{
     display:flex;
     height:100vh;
+    margin-right:5%;
 }
 
 
@@ -154,7 +157,7 @@ select{
 
 .tag img{
     display:flex;
-    height:150px;
+    max-height:150px;
     
 }
 
@@ -216,11 +219,23 @@ select{
     font-family: "Consolas";
 }
 
-.results-row{
+.results-row {
     display:flex;
     border-top:solid 1px gray;
     /* border:solid 2px aqua; */
 }
+
+/* .results-row-hidden{
+    display:flex;
+    opacity:0.5;
+    transition: all 1s;
+}
+
+.results-row-show{
+    display:flex;
+    opacity:1;
+} */
+
 
 .results-table-small{
     min-width:30%;
@@ -274,7 +289,7 @@ select{
 }
 
 textarea{
-    width:99%;
+    width:95%;
     resize:none;
 }
 
@@ -282,7 +297,7 @@ input[type=submit]{
     font-family: "Inter";
     font-weight:bold;
     color:white;
-    width:100%;
+    width:96%;
     height:40px;
     background-color:black;
    
@@ -369,7 +384,7 @@ input[type=submit]{
     
 }
 
-@media (max-width:600px) {
+@media (max-width:820px) {
     html, body{
         /* overflow-x:hidden; */
         position:relative;
@@ -450,7 +465,6 @@ input[type=submit]{
         min-width:60px;
         margin:0px 0px 0px 0px;
     }
-
 
     .results-material-desc{
         font-size:15px;
