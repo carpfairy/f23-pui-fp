@@ -1,4 +1,4 @@
-let clothingTypeList = ["Shirt", "Blouse", "Pants", "Blazer", "Jeans", "Cardigan/Sweater", "Jacket/Coat", "Skirt", "Sweatshirt", "Athleisure", "Undergarments", "Lingerie"]
+let clothingTypeList = ["Shirt", "Blouse", "Pants", "Blazer", "Jeans", "Cardigan/Sweater", "Jacket/Coat", "Skirt", "Sweatshirt", "Athleisure", "Undergarments"]
 
 const form = document.querySelector('form');
 

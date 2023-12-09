@@ -308,30 +308,16 @@ input[type=submit]{
 
     margin: 10px 0px 10px 0px;
     max-width:60%;
-    font-size:18px;
+}
 
+.results-clothtype-desc{
+    font-size:18px;
     font-family:"Consolas";
     line-height:26px;
     margin-left:20px;
     opacity:0.8;
+    
 }
-
-.results-clothtype-desc{
-    /* overflow:hidden;
-    animation: typing 3s steps(30,end);
-    animation-fill-mode:forwards; */
-}
-
-/* @keyframes typing{
-    from {width:0}
-    to {width:100%}
-}
-
-@keyframes blinking {
-    0% {border-right-color: transparent}
-    50% {border-right-color: black}
-    100% {border-right-color: transparent}
-} */
 
 .results-percent-error{
     margin: 100px;
