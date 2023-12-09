@@ -155,7 +155,7 @@ function getTextArea(){
 }
 
 //If on the main homepage, generate the dropdown menu and link the form area
-if(window.location.href.indexOf("main") > -1){
+if(window.location.href.indexOf("index") > -1){
     clothingTypeDropDown()
 
     //Empty localStorage
@@ -182,7 +182,7 @@ if(window.location.href.indexOf("main") > -1){
     });
 
     //Create typping animation
-    let typed= new Typed('.auto-type', {
+    let typingAnimation= new Typed('.auto-type', {
         strings:["favorite sweater.", "favorite top.", "favorite jacket.", "workout leggings.", "new coat.", "next shopping spree.", "evening gown.", "button down.", "button up.", "wardrobe."],
         typeSpeed:40,
         backSpeed:40,
@@ -202,7 +202,7 @@ if(window.location.href.indexOf("results") > -1){
         let errorMsg = document.createElement("div");
         errorMsg.classList.add('results-percent-error');
         tableDiv.appendChild(errorMsg);
-        errorMsg.innerHTML = 'No fabrics were inputted. Go back to the <a href="main.html" alt="blend home page">home page</a> to enter fabrics.';
+        errorMsg.innerHTML = 'No fabrics were inputted. Go back to the <a href="index.html" alt="blend home page">home page</a> to enter fabrics.';
         let blendingfor = document.getElementById("blending-for");
         blendingfor.remove();
     }
@@ -441,6 +441,9 @@ function createColDivDesc(counter, fab){
     let type=document.createElement("div");
     type.classList.add('results-material-subhead');
     thisDiv.appendChild(type);
+
+
+
     type.innerHTML="<b>Type:</b> " + fabType;
     
     let typeDesc=document.createElement("div");
@@ -521,8 +524,6 @@ materialObjects.sort(({percent:a}, {percent:b}) => b-a);
 // let scope=blotter.forText(text);
 
 // scope.appendTo(container);
-
-
 
 for(i in materialObjects){
     createRowDiv()
